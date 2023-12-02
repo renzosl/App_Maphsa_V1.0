@@ -67,7 +67,7 @@ This app uses the following libraries / API :
 ## Install
 - Open your favorite IDE (here Android Studio)
 - Open a new project and choose "Get From Version Control" option
-- Clone the app by copying / pasting this repository link : https://github.com/renzosl/App_Maphsa.git
+- Clone the app by copying / pasting this repository link : https://github.com/renzosl/App_Maphsa_V1.0
 - Specify a destination folder name on your computer and click "clone"
 - Here are the steps to illustrate in pictures :
 - Next, the app will compile in Android Studio
