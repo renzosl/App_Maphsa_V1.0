@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/property_details_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.activities.PropertyDetailsActivity">
+
+    <!-- Toolbar -->
+    <include
+        android:id="@+id/main_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/toolbar_main" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/main_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/main_toolbar"
+            android:background="@color/colorIndigo">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/property_details_picture_height"
+                android:layout_centerInParent="true"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorEnabled="true"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="16dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="@color/colorWhite"
+                app:sliderIndicatorUnselectedColor="@color/colorGrey"
+                app:sliderScrollTimeInSec="2"
+                app:sliderStartAutoCycle="true"
+                app:layout_constraintTop_toBottomOf="@id/main_toolbar" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/property_details_update_button"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toTopOf="@+id/property_details_information_section"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/property_details_information_section"
+                android:contentDescription="@string/property_details_update_button"
+                app:backgroundTint="@android:color/white"
+                app:tint="@color/colorAccent"
+                app:borderWidth="0dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/property_details_information_section"
+                style="@style/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintTop_toBottomOf="@id/imageSlider"
+                tools:layout_editor_absoluteX="16dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingVertical="@dimen/default_medium_padding">
+
+
+                    <TextView
+                        android:id="@+id/property_details_information_title"
+                        style="@style/cardMainTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/property_details_information_title" />
+
+                    <TextView
+                        android:id="@+id/property_details_information_area"
+                        android:textSize="@dimen/default_subtitle_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_information_title"
+                        tools:text="@string/details_information_subtitle" />
+
+                    <View
+                        android:id="@+id/property_details_separator"
+                        android:layout_width="@dimen/property_details_separator_width"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="@dimen/default_margin"
+                        android:background="@color/colorPrimary"
+                        android:foregroundGravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/property_details_information_area" />
+
+                    <TextView
+                        android:id="@+id/property_details_surface_title"
+                        style="@style/cardSubCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:text="@string/details_surface_title"
+                        app:drawableStartCompat="@drawable/ic_details_surface_24"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/property_details_separator" />
+
+                    <TextView
+                        android:id="@+id/property_details_surface_text"
+                        style="@style/cardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/property_details_surface_title"
+                        app:layout_constraintStart_toEndOf="@id/property_details_surface_title"
+                        app:layout_constraintTop_toTopOf="@+id/property_details_surface_title"
+                        tools:text="@string/details_surface_text" />
+
+                    <TextView
+                        android:id="@+id/property_details_rooms_title"
+                        style="@style/cardSubCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details_rooms_title"
+                        app:drawableStartCompat="@drawable/ic_details_rooms_24"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/property_details_surface_text" />
+
+                    <TextView
+                        android:id="@+id/property_details_rooms_text"
+                        style="@style/cardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/property_details_rooms_title"
+                        app:layout_constraintStart_toEndOf="@id/property_details_rooms_title"
+                        app:layout_constraintTop_toTopOf="@+id/property_details_rooms_title"
+                        tools:text="@string/details_rooms_text" />
+
+                    <TextView
+                        android:id="@+id/property_details_bathrooms_title"
+                        style="@style/cardSubCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details_bathrooms_title"
+                        app:drawableStartCompat="@drawable/ic_details_bathrooms_24"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/property_details_rooms_text" />
+
+                    <TextView
+                        android:id="@+id/property_details_bathrooms_text"
+                        style="@style/cardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/property_details_bathrooms_title"
+                        app:layout_constraintStart_toEndOf="@id/property_details_bathrooms_title"
+                        app:layout_constraintTop_toTopOf="@+id/property_details_bathrooms_title"
+                        tools:text="@string/details_bathrooms_text" />
+
+                    <TextView
+                        android:id="@+id/property_details_bedrooms_title"
+                        style="@style/cardSubCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details_bedrooms_title"
+                        app:drawableStartCompat="@drawable/ic_details_bedrooms_24"
+                        app:drawableTint="@color/colorPrimary"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/property_details_bathrooms_text" />
+
+                    <TextView
+                        android:id="@+id/property_details_bedrooms_text"
+                        style="@style/cardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/property_details_bedrooms_title"
+                        app:layout_constraintStart_toEndOf="@id/property_details_bedrooms_title"
+                        app:layout_constraintTop_toTopOf="@+id/property_details_bedrooms_title"
+                        tools:text="@string/details_bedrooms_text" />
+
+                    <TextView
+                        android:id="@+id/property_details_price_title"
+                        style="@style/cardSubCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details_price_title"
+                        app:drawableStartCompat="@drawable/ic_details_price_24"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/property_details_bedrooms_text" />
+
+                    <TextView
+                        android:id="@+id/property_details_price_text"
+                        style="@style/cardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/property_details_price_title"
+                        app:layout_constraintStart_toEndOf="@id/property_details_price_title"
+                        app:layout_constraintTop_toTopOf="@+id/property_details_price_title"
+                        tools:text="@string/details_price_text" />
+
+                    <!-- LOCATION CONTAINER -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/property_details_location_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/property_details_price_text">
+
+                        <!-- Guideline for 55% vertical separator -->
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/location_section_guideline1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.55" />
+
+                        <!-- Location Icon -->
+                        <ImageView
+                            android:id="@+id/property_details_location_icon"
+                            style="@style/cardTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_details_location_24"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/property_details_price_text" />
+
+                        <LinearLayout
+                            android:id="@+id/property_details_location_data"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/small_plus_margin"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toStartOf="@id/location_section_guideline1"
+                            app:layout_constraintStart_toEndOf="@id/property_details_location_icon"
+                            app:layout_constraintTop_toTopOf="@id/property_details_location_icon">
+
+                            <TextView
+                                android:id="@+id/property_details_location_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/details_location_title"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/higher_text_size"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/property_details_location_street"
+                                style="@style/location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="@string/details_street_text" />
+
+                            <TextView
+                                android:id="@+id/property_details_location_complement"
+                                style="@style/location"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lineBreakStyle="normal"
+                                android:maxLines="2"
+                                tools:text="@string/details_location_complement_text" />
+
+                            <TextView
+                                android:id="@+id/property_details_location_postal_code_and_city"
+                                style="@style/location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="2"
+                                tools:text="@string/details_postal_code_text" />
+
+
+                            <TextView
+                                android:id="@+id/property_details_location_country"
+                                style="@style/location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="@string/details_location_state_text" />
+
+                        </LinearLayout>
+
+                        <!-- MAP CONTAINER -->
+                        <LinearLayout
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="@dimen/zero"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/property_details_location_data"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <!-- Card view container -->
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/property_details_map_section"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/small_margin"
+                                android:layout_marginEnd="@dimen/default_margin"
+                                app:cardCornerRadius="8dp">
+
+                                <!-- Map View -->
+                                <com.google.android.gms.maps.MapView
+                                    android:id="@+id/map"
+                                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    map:cameraZoom="15"
+                                    android:contentDescription="Property location on map"
+                                    map:liteMode="true" />
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/background_sold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@color/backgroundTransparent"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/high_title_size"
+                        app:layout_constraintTop_toTopOf="@id/background_sold"
+                        app:layout_constraintBottom_toBottomOf="@id/background_sold"
+                        app:layout_constraintStart_toStartOf="@id/background_sold"
+                        app:layout_constraintEnd_toEndOf="@id/background_sold"
+                        android:rotation="-35"
+                        android:textColor="@color/colorAccent"
+                        android:text="@string/sold"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- PROPERTY DETAILS PICTURES -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/details_pictures_section"
+                style="@style/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/property_details_information_section"
+                app:layout_constraintBottom_toTopOf="@+id/details_description_section">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/details_pictures_title"
+                        style="@style/cardTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_pictures_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/details_pictures_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:scrollbarStyle="outsideOverlay"
+                        android:scrollbars="horizontal"
+                        android:paddingVertical="@dimen/very_small_margin"
+                        android:layout_marginBottom="@dimen/very_small_margin"
+                        android:paddingHorizontal="@dimen/small_plus_margin"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintStart_toStartOf="@id/details_pictures_title"
+                        app:layout_constraintTop_toBottomOf="@id/details_pictures_title"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/item_property_picture" />
+
+                    <ImageView
+                        android:id="@+id/list_arrow_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="@color/colorAccent"
+                        app:layout_constraintTop_toTopOf="@id/details_pictures_list"
+                        app:layout_constraintBottom_toBottomOf="@id/details_pictures_list"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:visibility="gone"/>
+
+                    <ImageView
+                        android:id="@+id/list_arrow_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_left"
+                        app:tint="@color/colorAccent"
+                        app:layout_constraintTop_toTopOf="@id/details_pictures_list"
+                        app:layout_constraintBottom_toBottomOf="@id/details_pictures_list"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:visibility="gone"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/details_description_section"
+                style="@style/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/details_pictures_section">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/default_padding">
+
+                    <TextView
+                        android:id="@+id/property_details_description_title"
+                        style="@style/cardTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/property_details_description_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/property_details_description_text"
+                        style="@style/descriptionText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:gravity="start"
+                        android:lineBreakStyle="strict"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_description_title"
+                        tools:text="@string/property_details_description_text" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/details_points_of_interest_section"
+                style="@style/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/details_description_section">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/default_padding">
+
+                    <TextView
+                        android:id="@+id/property_details_points_of_interest_title"
+                        style="@style/cardTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/property_details_points_of_interest_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- PRIMARY SCHOOLS -->
+                    <TextView
+                        android:id="@+id/property_details_primary_school_title"
+                        style="@style/cardSubCategories"
+                        android:text="@string/property_details_primary_school_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:drawableStart="@drawable/ic_school"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_points_of_interest_title" />
+
+                    <TextView
+                        android:id="@+id/property_details_primary_school_counter"
+                        style="@style/cardText"
+                        android:text="@string/property_details_primary_school_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/property_details_primary_school_title"
+                        app:layout_constraintBottom_toBottomOf="@id/property_details_primary_school_title"
+                        app:layout_constraintTop_toTopOf="@id/property_details_primary_school_title" />
+
+                    <!--  Primary School Examples -->
+                    <com.ms.square.android.expandabletextview.ExpandableTextView
+                        android:id="@+id/property_details_primary_school_example"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        expandableTextView:animDuration="100"
+                        expandableTextView:maxCollapsedLines="2"
+                        expandableTextView:expandDrawable="@drawable/ic_arrow_down"
+                        expandableTextView:collapseDrawable="@drawable/ic_arrow_up"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_primary_school_title" >
+
+                        <!-- simple text view  -->
+                        <TextView
+                            android:id="@+id/expandable_text"
+                            style="@style/pointOfInterestExample"
+                            android:text="@string/property_details_place_example"
+                            android:ellipsize="end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp" />
+
+                        <!-- expandable ImageButton -->
+                        <ImageButton
+                            android:id="@id/expand_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:background="@android:color/transparent" />
+
+                    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+                    <!-- SECONDARY SCHOOLS -->
+                    <TextView
+                        android:id="@+id/property_details_secondary_school_title"
+                        style="@style/cardSubCategories"
+                        android:text="@string/property_details_secondary_school_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/very_small_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
+                        android:drawableStart="@drawable/ic_school"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_primary_school_example" />
+
+                    <TextView
+                        android:id="@+id/property_details_secondary_school_counter"
+                        style="@style/cardText"
+                        android:text="@string/property_details_primary_school_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/property_details_secondary_school_title"
+                        app:layout_constraintBottom_toBottomOf="@id/property_details_secondary_school_title"
+                        app:layout_constraintTop_toTopOf="@id/property_details_secondary_school_title" />
+
+                    <!--  Secondary School Examples -->
+                    <com.ms.square.android.expandabletextview.ExpandableTextView
+                        android:id="@+id/property_details_secondary_school_example"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        expandableTextView:animDuration="100"
+                        expandableTextView:maxCollapsedLines="2"
+                        expandableTextView:expandDrawable="@drawable/ic_arrow_down"
+                        expandableTextView:collapseDrawable="@drawable/ic_arrow_up"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_secondary_school_title" >
+
+                        <!-- simple text view  -->
+                        <TextView
+                            android:id="@+id/expandable_text"
+                            style="@style/pointOfInterestExample"
+                            android:text="@string/property_details_place_example"
+                            android:ellipsize="end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp" />
+
+                        <!-- expandable ImageButton -->
+                        <ImageButton
+                            android:id="@id/expand_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:background="@android:color/transparent" />
+
+                    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+                    <!-- PARKS -->
+                    <TextView
+                        android:id="@+id/property_details_park_title"
+                        style="@style/cardSubCategories"
+                        android:text="@string/property_details_park_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/very_small_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
+                        android:drawableStart="@drawable/ic_park"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_secondary_school_example" />
+
+                    <TextView
+                        android:id="@+id/property_details_park_counter"
+                        style="@style/cardText"
+                        android:text="@string/property_details_primary_school_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/property_details_park_title"
+                        app:layout_constraintBottom_toBottomOf="@id/property_details_park_title"
+                        app:layout_constraintTop_toTopOf="@id/property_details_park_title" />
+
+                    <!-- Parks examples -->
+                    <com.ms.square.android.expandabletextview.ExpandableTextView
+                        android:id="@+id/property_details_park_example"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        expandableTextView:animDuration="100"
+                        expandableTextView:maxCollapsedLines="2"
+                        expandableTextView:expandDrawable="@drawable/ic_arrow_down"
+                        expandableTextView:collapseDrawable="@drawable/ic_arrow_up"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_park_title" >
+
+                        <!-- simple text view  -->
+                        <TextView
+                            android:id="@+id/expandable_text"
+                            style="@style/pointOfInterestExample"
+                            android:text="@string/property_details_place_example"
+                            android:ellipsize="end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp" />
+
+                        <!-- expandable ImageButton -->
+                        <ImageButton
+                            android:id="@id/expand_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:background="@android:color/transparent" />
+
+                    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+                    <!-- SUPERMARKETS -->
+                    <TextView
+                        android:id="@+id/property_details_supermarket_title"
+                        style="@style/cardSubCategories"
+                        android:text="@string/property_details_supermarket_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/very_small_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
+                        android:drawableStart="@drawable/ic_grocery"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_park_example" />
+
+                    <TextView
+                        android:id="@+id/property_details_supermarket_counter"
+                        style="@style/cardText"
+                        android:text="@string/property_details_primary_school_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/property_details_supermarket_title"
+                        app:layout_constraintBottom_toBottomOf="@id/property_details_supermarket_title"
+                        app:layout_constraintTop_toTopOf="@id/property_details_supermarket_title" />
+
+                    <!-- Supermarkets examples -->
+                    <com.ms.square.android.expandabletextview.ExpandableTextView
+                        android:id="@+id/property_details_supermarket_example"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        expandableTextView:animDuration="100"
+                        expandableTextView:maxCollapsedLines="2"
+                        expandableTextView:expandDrawable="@drawable/ic_arrow_down"
+                        expandableTextView:collapseDrawable="@drawable/ic_arrow_up"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_supermarket_title" >
+
+                        <!-- simple text view  -->
+                        <TextView
+                            android:id="@+id/expandable_text"
+                            style="@style/pointOfInterestExample"
+                            android:text="@string/property_details_place_example"
+                            android:ellipsize="end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp" />
+
+                        <!-- expandable ImageButton -->
+                        <ImageButton
+                            android:id="@id/expand_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:background="@android:color/transparent" />
+
+                    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+                    <!-- RESTAURANTS -->
+                    <TextView
+                        android:id="@+id/property_details_restaurant_title"
+                        style="@style/cardSubCategories"
+                        android:text="@string/property_details_restaurant_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/very_small_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
+                        android:drawableStart="@drawable/ic_restaurant"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_supermarket_example" />
+
+                    <TextView
+                        android:id="@+id/property_details_restaurant_counter"
+                        style="@style/cardText"
+                        android:text="@string/property_details_primary_school_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/property_details_restaurant_title"
+                        app:layout_constraintBottom_toBottomOf="@id/property_details_restaurant_title"
+                        app:layout_constraintTop_toTopOf="@id/property_details_restaurant_title" />
+
+                    <!-- Restaurants examples -->
+                    <com.ms.square.android.expandabletextview.ExpandableTextView
+                        android:id="@+id/property_details_restaurant_example"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        expandableTextView:animDuration="100"
+                        expandableTextView:maxCollapsedLines="2"
+                        expandableTextView:expandDrawable="@drawable/ic_arrow_down"
+                        expandableTextView:collapseDrawable="@drawable/ic_arrow_up"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_restaurant_title" >
+
+                        <!-- simple text view  -->
+                        <TextView
+                            android:id="@+id/expandable_text"
+                            style="@style/pointOfInterestExample"
+                            android:text="@string/property_details_place_example"
+                            android:ellipsize="end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp" />
+
+                        <!-- expandable ImageButton -->
+                        <ImageButton
+                            android:id="@id/expand_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:background="@android:color/transparent" />
+
+                    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+                    <!-- Bakery -->
+                    <TextView
+                        android:id="@+id/property_details_bakery_title"
+                        style="@style/cardSubCategories"
+                        android:text="@string/property_details_bakery_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/very_small_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
+                        android:drawableStart="@drawable/ic_bakery"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_restaurant_example" />
+
+                    <TextView
+                        android:id="@+id/property_details_bakery_counter"
+                        style="@style/cardText"
+                        android:text="@string/property_details_primary_school_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/property_details_bakery_title"
+                        app:layout_constraintBottom_toBottomOf="@id/property_details_bakery_title"
+                        app:layout_constraintTop_toTopOf="@id/property_details_bakery_title" />
+
+                    <!-- Bakeries examples -->
+                    <com.ms.square.android.expandabletextview.ExpandableTextView
+                        android:id="@+id/property_details_bakery_example"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        expandableTextView:animDuration="100"
+                        expandableTextView:maxCollapsedLines="2"
+                        expandableTextView:expandDrawable="@drawable/ic_arrow_down"
+                        expandableTextView:collapseDrawable="@drawable/ic_arrow_up"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_bakery_title" >
+
+                        <!-- simple text view  -->
+                        <TextView
+                            android:id="@+id/expandable_text"
+                            style="@style/pointOfInterestExample"
+                            android:text="@string/property_details_place_example"
+                            android:ellipsize="end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp" />
+
+                        <!-- expandable ImageButton -->
+                        <ImageButton
+                            android:id="@id/expand_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:background="@android:color/transparent" />
+
+                    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+                    <!-- Doctors -->
+                    <TextView
+                        android:id="@+id/property_details_doctor_title"
+                        style="@style/cardSubCategories"
+                        android:text="@string/property_details_doctor_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/very_small_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
+                        android:drawableStart="@drawable/ic_medical_services"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_bakery_example" />
+
+                    <TextView
+                        android:id="@+id/property_details_doctor_counter"
+                        style="@style/cardText"
+                        android:text="@string/property_details_primary_school_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/property_details_doctor_title"
+                        app:layout_constraintBottom_toBottomOf="@id/property_details_doctor_title"
+                        app:layout_constraintTop_toTopOf="@id/property_details_doctor_title" />
+
+                    <!-- Doctors examples -->
+                    <com.ms.square.android.expandabletextview.ExpandableTextView
+                        android:id="@+id/property_details_doctor_example"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        expandableTextView:animDuration="100"
+                        expandableTextView:maxCollapsedLines="2"
+                        expandableTextView:expandDrawable="@drawable/ic_arrow_down"
+                        expandableTextView:collapseDrawable="@drawable/ic_arrow_up"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_doctor_title" >
+
+                        <!-- simple text view  -->
+                        <TextView
+                            android:id="@+id/expandable_text"
+                            style="@style/pointOfInterestExample"
+                            android:text="@string/property_details_place_example"
+                            android:ellipsize="end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp" />
+
+                        <!-- expandable ImageButton -->
+                        <ImageButton
+                            android:id="@id/expand_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:background="@android:color/transparent" />
+
+                    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+                    <!-- Pharmacies -->
+                    <TextView
+                        android:id="@+id/property_details_pharmacy_title"
+                        style="@style/cardSubCategories"
+                        android:text="@string/property_details_pharmacy_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/very_small_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
+                        android:drawableStart="@drawable/ic_pharmacy"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_doctor_example" />
+
+                    <TextView
+                        android:id="@+id/property_details_pharmacy_counter"
+                        style="@style/cardText"
+                        android:text="@string/property_details_primary_school_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/property_details_pharmacy_title"
+                        app:layout_constraintBottom_toBottomOf="@id/property_details_pharmacy_title"
+                        app:layout_constraintTop_toTopOf="@id/property_details_pharmacy_title" />
+
+                    <!-- Pharmacies examples -->
+                    <com.ms.square.android.expandabletextview.ExpandableTextView
+                        android:id="@+id/property_details_pharmacy_example"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        expandableTextView:animDuration="100"
+                        expandableTextView:maxCollapsedLines="2"
+                        expandableTextView:expandDrawable="@drawable/ic_arrow_down"
+                        expandableTextView:collapseDrawable="@drawable/ic_arrow_up"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/property_details_pharmacy_title" >
+
+                        <!-- simple text view  -->
+                        <TextView
+                            android:id="@+id/expandable_text"
+                            style="@style/pointOfInterestExample"
+                            android:text="@string/property_details_place_example"
+                            android:ellipsize="end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp" />
+
+                        <!-- expandable ImageButton -->
+                        <ImageButton
+                            android:id="@id/expand_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:background="@android:color/transparent" />
+
+                    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/details_other_section"
+                style="@style/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="68dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/details_points_of_interest_section"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/default_padding">
+
+                    <TextView
+                        android:id="@+id/property_details_other_section_title"
+                        style="@style/cardTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/property_details_other_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/property_details_realtor_title"
+                        style="@style/cardSubCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details_realtor_title"
+                        app:drawableStartCompat="@drawable/ic_baseline_person_24"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/property_details_other_section_title" />
+
+                    <TextView
+                        android:id="@+id/property_details_realtor_text"
+                        style="@style/cardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/property_details_realtor_title"
+                        app:layout_constraintStart_toEndOf="@id/property_details_realtor_title"
+                        app:layout_constraintTop_toTopOf="@+id/property_details_realtor_title"
+                        tools:text="@string/details_realtor_text" />
+
+                    <TextView
+                        android:id="@+id/property_details_publication_date_title"
+                        style="@style/cardSubCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details_date_title"
+                        app:drawableStartCompat="@drawable/ic_calendar_24"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/property_details_realtor_title" />
+
+                    <TextView
+                        android:id="@+id/property_details_publication_date_text"
+                        style="@style/cardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/property_details_publication_date_title"
+                        app:layout_constraintStart_toEndOf="@id/property_details_publication_date_title"
+                        app:layout_constraintTop_toTopOf="@+id/property_details_publication_date_title"
+                        tools:text="@string/details_date_text" />
+
+                    <TextView
+                        android:id="@+id/property_details_update_date_title"
+                        style="@style/cardSubCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details_update_date_title"
+                        app:drawableStartCompat="@drawable/ic_edit_calendar_24"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/property_details_publication_date_title" />
+
+                    <TextView
+                        android:id="@+id/property_details_update_date_text"
+                        style="@style/cardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/property_details_update_date_title"
+                        app:layout_constraintStart_toEndOf="@id/property_details_update_date_title"
+                        app:layout_constraintTop_toTopOf="@+id/property_details_update_date_title"
+                        tools:text="@string/details_date_text" />
+
+                    <TextView
+                        android:id="@+id/property_details_sold_date_title"
+                        style="@style/cardSubCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details_sold_date_title"
+                        app:drawableStartCompat="@drawable/ic_calendar_24"
+                        android:drawableTint="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/property_details_update_date_title" />
+
+                    <TextView
+                        android:id="@+id/property_details_sold_date_text"
+                        style="@style/cardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/property_details_sold_date_title"
+                        app:layout_constraintStart_toEndOf="@id/property_details_sold_date_title"
+                        app:layout_constraintTop_toTopOf="@+id/property_details_sold_date_title"
+                        tools:text="@string/details_date_text" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

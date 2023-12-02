@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Toolbar -->
+    <include
+        android:id="@+id/main_toolbar"
+        layout="@layout/toolbar_main" />
+
+    <!-- PROPERTY DATA LAYOUT -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/main_toolbar">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/add_property_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="56dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:context=".ui.activities.AddPropertyActivity">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginEnd="@dimen/default_margin"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/bottom_nav_view"
+                    android:gravity="center_horizontal">
+
+                    <!-- PROPERTY NAME -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_name_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_medium_margin"
+                        android:hint="@string/add_property_name"
+                        app:helperTextEnabled="true"
+                        app:helperText="@string/required_field"
+                        app:endIconMode="clear_text">
+
+                        <EditText
+                            android:id="@+id/add_name_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/add_property_name"
+                            android:inputType="textShortMessage"
+                            android:imeOptions="actionNext"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:autofillHints=""/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- PROPERTY AREA -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_area_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:hint="@string/add_property_area"
+                        app:helperTextEnabled="true"
+                        app:helperText="@string/required_field"
+                        app:endIconMode="clear_text">
+
+                        <EditText
+                            android:id="@+id/add_area_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/add_property_area"
+                            android:inputType="textShortMessage"
+                            android:imeOptions="actionNext"
+                            android:autofillHints="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- PROPERTY TYPE -->
+                    <TextView
+                        android:id="@+id/add_type_layout_title"
+                        style="@style/fieldTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textSize="@dimen/default_subtitle_size"
+                        android:gravity="center"
+                        android:text="@string/choose_property_type"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+
+                        <RadioGroup
+                            android:id="@+id/add_type_radioGroup1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            android:orientation="vertical"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/add_type_layout_title">
+
+
+                            <RadioButton
+                                android:id="@+id/add_type_radiobutton_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:text="@string/add_type_flat"
+                                android:checked="true"/>
+
+                            <RadioButton
+                                android:id="@+id/add_type_radiobutton_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/add_type_house"
+                                app:layout_constraintTop_toBottomOf="@id/add_type_radiobutton_1"
+                                app:layout_constraintStart_toEndOf="@id/add_type_radiobutton_1" />
+
+                        </RadioGroup>
+
+                        <RadioGroup
+                            android:id="@+id/add_type_radioGroup2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="@dimen/small_margin"
+                            android:layout_marginStart="@dimen/default_medium_margin"
+                            android:layout_toEndOf="@id/add_type_radioGroup1">
+
+                            <RadioButton
+                                android:id="@+id/add_type_radiobutton_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/add_type_duplex"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                            <RadioButton
+                                android:id="@+id/add_type_radiobutton_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/add_type_penthouse"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </RadioGroup>
+                    </RelativeLayout>
+
+
+                    <!-- PROPERTY PRICE -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_price_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:hint="@string/add_price_text"
+                        app:helperTextEnabled="true"
+                        app:helperText="@string/required_field"
+                        app:endIconMode="clear_text">
+
+                        <EditText
+                            android:id="@+id/add_price_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:drawablePadding="@dimen/default_drawable_padding"
+                            android:drawableStart="@drawable/ic_details_price_24"
+                            android:hint="@string/add_price_text"
+                            android:inputType="number"
+                            android:imeOptions="actionNext"
+                            android:autofillHints="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- PROPERTY SURFACE -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_surface_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:hint="@string/add_surface_text"
+                        app:endIconMode="clear_text">
+
+                        <EditText
+                            android:id="@+id/add_surface_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:drawableStart="@drawable/ic_details_surface_24"
+                            android:drawablePadding="@dimen/default_drawable_padding"
+                            android:hint="@string/add_surface_text"
+                            android:inputType="number"
+                            android:imeOptions="actionNext"
+                            android:autofillHints="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- PROPERTY DESCRIPTION -->
+                    <LinearLayout
+                        android:id="@+id/add_description_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/add_surface_layout">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/add_description_layout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:hint="@string/add_property_description"
+                            app:endIconMode="clear_text">
+
+                            <EditText
+                                android:id="@+id/add_description_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minLines="5"
+                                android:inputType="textMultiLine"
+                                android:imeOptions="actionNext"
+                                android:autofillHints="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <!-- PROPERTY STATUS -->
+                    <TextView
+                        android:id="@+id/add_status_layout_title"
+                        style="@style/fieldTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:textSize="@dimen/default_subtitle_size"
+                        android:gravity="center"
+                        android:text="@string/choose_property_status"/>
+
+                    <RadioGroup
+                        android:id="@+id/add_status_radioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="UselessParent">
+
+                        <RadioButton
+                            android:id="@+id/add_status_radioButton1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/add_status_1" />
+
+                        <RadioButton
+                            android:id="@+id/add_status_radioButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_medium_margin"
+                            android:text="@string/add_status_2" />
+
+                    </RadioGroup>
+
+
+                    <!-- PROPERTY PICTURES -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/add_pictures_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/default_medium_margin">
+
+                        <TextView
+                            android:id="@+id/add_pictures_title"
+                            style="@style/fieldTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            android:text="@string/add_pictures_title"
+                            android:textSize="@dimen/default_subtitle_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/add_pictures_button"
+                            android:layout_width="@dimen/add_property_picture"
+                            android:layout_height="@dimen/add_property_picture"
+                            android:layout_marginTop="@dimen/small_margin"
+                            android:layout_marginStart="@dimen/small_plus_margin"
+                            android:src="@drawable/ic_add_photo_24"
+                            app:layout_constraintStart_toStartOf="@id/add_pictures_title"
+                            app:layout_constraintTop_toBottomOf="@id/add_pictures_title"
+                            android:contentDescription="@string/add_new_picture"
+                            app:tint="@color/colorAccent" />
+
+                        <TextView
+                            android:id="@+id/empty_error_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/empty_pictures_list_error"
+                            android:textSize="@dimen/higher_text_size"
+                            android:textColor="@color/design_default_color_error"
+                            app:layout_constraintStart_toEndOf="@id/add_pictures_button"
+                            app:layout_constraintTop_toTopOf="@id/add_pictures_button"
+                            app:layout_constraintBottom_toBottomOf="@id/add_pictures_button"
+                            android:layout_marginStart="@dimen/default_margin"
+                            android:visibility="gone"/>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/add_pictures_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:orientation="horizontal"
+                            android:scrollbars="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/add_pictures_button"
+                            tools:itemCount="5"
+                            tools:listitem="@layout/item_property_picture" />
+
+                        <ImageView
+                            android:id="@+id/list_arrow_right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_right"
+                            android:tint="@color/colorAccent"
+                            app:layout_constraintTop_toTopOf="@id/add_pictures_list"
+                            app:layout_constraintBottom_toBottomOf="@id/add_pictures_list"
+                            app:layout_constraintEnd_toEndOf="@id/add_pictures_list"
+                            android:visibility="gone"/>
+
+                        <ImageView
+                            android:id="@+id/list_arrow_left"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_left"
+                            android:tint="@color/colorAccent"
+                            app:layout_constraintTop_toTopOf="@id/add_pictures_list"
+                            app:layout_constraintBottom_toBottomOf="@id/add_pictures_list"
+                            app:layout_constraintStart_toStartOf="@id/add_pictures_list"
+                            android:visibility="gone"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- PROPERTY ROOMS DETAILS WITH SPINNERS -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:layout_gravity="center">
+
+                        <!-- ROOMS NUMBER -->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/add_rooms_spinner_layout"
+                            app:layout_constraintTop_toBottomOf="@id/add_pictures_list"
+                            android:layout_marginBottom="@dimen/small_margin"
+                            android:gravity = "center">
+
+                            <TextView
+                                android:id="@+id/add_number_rooms_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/spinner_number_rooms"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/high_text_size" />
+
+                            <Spinner
+                                android:id="@+id/add_number_rooms_count"
+                                style="@style/Widget.AppCompat.Spinner.DropDown"
+                                android:theme="@style/Spinner"
+                                android:layout_width="@dimen/spinner_width"
+                                android:foregroundTint="@color/colorAccent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left" />
+
+                        </LinearLayout>
+
+                        <!-- BEDROOMS NUMBER -->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="@id/add_rooms_spinner_layout"
+                            app:layout_constraintTop_toBottomOf="@id/add_rooms_spinner_layout"
+                            android:id="@+id/add_bedrooms_spinner_layout"
+                            android:layout_marginBottom="@dimen/small_margin">
+
+                            <TextView
+                                android:id="@+id/add_number_bedrooms_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/spinner_number_bedrooms"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/high_text_size" />
+
+                            <Spinner
+                                android:id="@+id/add_number_bedrooms_count"
+                                style="@style/Widget.AppCompat.Spinner.DropDown"
+                                android:theme="@style/Spinner"
+                                android:layout_width="@dimen/spinner_width"
+                                android:foregroundTint="@color/colorAccent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left" />
+
+                        </LinearLayout>
+
+                        <!-- BATHROOMS NUMBER -->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/add_bathrooms_spinner_layout"
+                            android:layout_marginBottom="@dimen/small_margin"
+                            app:layout_constraintTop_toBottomOf="@id/add_bedrooms_spinner_layout"
+                            app:layout_constraintStart_toStartOf="@id/add_rooms_spinner_layout">
+
+                            <TextView
+                                android:id="@+id/add_number_bathrooms_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/spinner_number_bathrooms"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/high_text_size" />
+
+                            <Spinner
+                                android:id="@+id/add_number_bathrooms_count"
+                                style="@style/Widget.AppCompat.Spinner.DropDown"
+                                android:theme="@style/Spinner"
+                                android:layout_width="@dimen/spinner_width"
+                                android:foregroundTint="@color/colorAccent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left" />
+
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <!-- CREATION DATE -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_date_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:hint="@string/add_property_creation_date"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/add_date_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:drawableStart="@drawable/ic_calendar_24"
+                            android:drawableTint="@color/colorPrimary"
+                            android:drawablePadding="@dimen/default_drawable_padding"
+                            android:autofillHints=""
+                            android:hint="@string/add_property_creation_date"
+                            android:inputType="textShortMessage"
+                            android:imeOptions="actionNext" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- SOLD DATE -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_sold_date_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:hint="@string/add_property_sold_date"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/add_sold_date_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:drawableStart="@drawable/ic_calendar_24"
+                            android:drawableTint="@color/colorPrimary"
+                            android:drawablePadding="@dimen/default_drawable_padding"
+                            android:hint="@string/add_property_sold_date"
+                            android:inputType="textShortMessage"
+                            android:imeOptions="actionNext"
+                            android:autofillHints=""/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- ADDRESS SECTION -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/add_pictures_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <!-- ADDRESS SECTION TITLE -->
+                        <TextView
+                            android:id="@+id/add_address_layout_title"
+                            style="@style/fieldTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/default_margin"
+                            android:textSize="@dimen/default_subtitle_size"
+                            android:gravity="start"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:text="@string/add_property_address_title"/>
+
+                        <!-- STREET NUMBER -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/add_street_number_layout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            app:layout_constraintTop_toBottomOf="@id/add_address_layout_title"
+                            android:hint="@string/add_property_street_number"
+                            app:helperTextEnabled="true"
+                            app:helperText="@string/required_field"
+                            app:endIconMode="clear_text">
+
+                            <EditText
+                                android:id="@+id/add_street_number_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/add_property_street_number"
+                                android:inputType="textShortMessage"
+                                android:imeOptions="actionNext"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:autofillHints=""/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- STREET NAME -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/add_street_name_layout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            app:layout_constraintTop_toBottomOf="@id/add_street_number_layout"
+                            android:hint="@string/add_property_street_name"
+                            app:helperTextEnabled="true"
+                            app:helperText="@string/required_field"
+                            app:endIconMode="clear_text">
+
+                            <EditText
+                                android:id="@+id/add_street_name_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/add_property_street_name"
+                                android:inputType="textShortMessage"
+                                android:imeOptions="actionNext"
+                                android:autofillHints="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- COMPLEMENT -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/add_address_complement_layout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            app:layout_constraintTop_toBottomOf="@id/add_street_name_layout"
+                            android:hint="@string/add_address_complement"
+                            app:endIconMode="clear_text">
+
+                            <EditText
+                                android:id="@+id/add_address_complement_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/add_address_complement"
+                                android:inputType="textShortMessage"
+                                android:imeOptions="actionNext"
+                                android:autofillHints="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- POSTAL CODE -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/add_postal_code_layout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            app:layout_constraintTop_toBottomOf="@id/add_address_complement_layout"
+                            android:hint="@string/add_postal_code"
+                            app:helperTextEnabled="true"
+                            app:helperText="@string/required_field"
+                            app:endIconMode="clear_text">
+
+                            <EditText
+                                android:id="@+id/add_postal_code_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/add_postal_code"
+                                android:inputType="number"
+                                android:maxLength="6"
+                                android:imeOptions="actionNext"
+                                android:autofillHints="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- CITY -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/add_city_layout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            app:layout_constraintTop_toBottomOf="@id/add_postal_code_layout"
+                            android:hint="@string/add_property_city"
+                            app:helperTextEnabled="true"
+                            app:helperText="@string/required_field"
+                            app:endIconMode="clear_text">
+
+                            <EditText
+                                android:id="@+id/add_city_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/add_property_city"
+                                android:inputType="textShortMessage"
+                                android:imeOptions="actionNext"
+                                android:autofillHints="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- COUNTRY -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/add_country_layout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            app:layout_constraintTop_toBottomOf="@id/add_city_layout"
+                            android:hint="@string/add_property_country"
+                            app:helperTextEnabled="true"
+                            app:helperText="@string/required_field"
+                            app:endIconMode="clear_text">
+
+                            <EditText
+                                android:id="@+id/add_country_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/add_property_country"
+                                android:inputType="textShortMessage"
+                                android:imeOptions="actionNext"
+                                android:autofillHints="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Button
+                        android:id="@+id/create"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:textColor="@color/colorWhite"
+                        android:layout_gravity="center"
+                        app:cornerRadius="12dp"
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:text="@string/save_button_text"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

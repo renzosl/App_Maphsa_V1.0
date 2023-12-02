@@ -1,0 +1,160 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorOnBackground">@color/colorPrimary</item>
+        // For material button 3 elevated
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Material3.LabelLarge</item>
+    </style>
+
+    <!-- STYLE NAV DRAWER HEADER -->
+    <style name="DrawerTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <!-- STYLE HAMBURGER / BACK ARROW IN TOOLBAR -->
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+
+    <!-- PROPERTY DETAILS CARD VIEW-->
+    <style name="cardView">
+        <item name="background">@color/colorWhite</item>
+        <item name="elevation">4dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <!-- PROPERTY DETAILS MAIN TITLE-->
+    <style name="cardMainTitle" >
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/default_title_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- PROPERTY DETAILS SECTIONS TITLES-->
+    <style name="cardTitle" >
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:textSize">@dimen/high_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <!-- PROPERTY DETAILS SUB SECTIONS TITLES-->
+    <style name="cardSubCategories" >
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:textSize">@dimen/higher_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <!-- PROPERTY DETAILS PICTURE DESCRIPTION-->
+    <style name="pictureTitle" >
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/default_medium_margin</item>
+        <item name="android:textSize">@dimen/higher_text_size</item>
+        <item name="android:background">@color/backgroundTransparent</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- PROPERTY DETAILS CARD TEXTS-->
+    <style name="cardText">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <!-- PROPERTY DETAILS LOCATION TITLE-->
+    <style name="cardLocationTitle" >
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/high_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <!-- PROPERTY DETAILS LOCATION SECTION-->
+    <style name="location">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <!-- PROPERTY DETAILS CARD TEXTS-->
+    <style name="descriptionText">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <!-- PROPERTY DETAILS POINTS OF INTEREST EXAMPLES-->
+    <style name="pointOfInterestExample">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:textSize">@dimen/smaller_text_size</item>
+        <item name="android:textColor">@color/colorIron</item>
+    </style>
+
+    <!-- BOTTOM NAVIGATION -->
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- BOTTOM NAVIGATION WHEN ACTIVE -->
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- ADD PROPERTY FIELDS TITLES -->
+    <style name="fieldTitle" >
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    // Custom Alert Dialog Style
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/rounded_corner</item>
+    </style>
+
+
+    <style name="EditTextStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxStrokeWidth">1dp</item>
+    </style>
+
+
+
+</resources>

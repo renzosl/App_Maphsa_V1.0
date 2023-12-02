@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_activity_message">Le premier bien immobilier enregistré vaut&#160;</string>
+    <string name="house_value_text">Voici la valeur d\'un bien :</string>
+    <string name="zero_value">0</string>
+
+    // NAVIGATION
+    <string name="navigation_list_view">Liste</string>
+    <string name="navigation_map_view">Carte</string>
+    <string name="navigation_add_property">Ajouter un bien</string>
+
+    <string name="bottom_navigation_list_view">Liste</string>
+    <string name="bottom_navigation_map_view">Carte</string>
+    <string name="bottom_navigation_add_property">Ajouter un bien</string>
+
+    // FRAGMENTS LABELS
+    <string name="list_fragment_label">Liste des biens immobiliers</string>
+    <string name="map_fragment_label">Carte des biens immobiliers</string>
+    <string name="add_property_fragment_label">Ajouter un bien immobilier</string>
+
+    // NAVIGATION DRAWER
+    <string name="drawer_title_login">CONNEXION</string>
+    <string name="drawer_title_my_properties">MES BIENS</string>
+    <string name="drawer_title_my_favorites">MES FAVORIS</string>
+    <string name="drawer_title_settings">PARAMÈTRES</string>
+    <string name="drawer_title_logout">DÉCONNEXION</string>
+    <string name="info_no_email_found">Adresse e-mail non trouvée</string>
+    <string name="info_no_username_found">Nom d\'utilisateur non trouvé</string>
+    <string name="please_login">Veuillez vous connecter</string>
+
+    // AUTHENTICATION
+    <string name="error_not_connected">Vous devez être authentifié(e)</string>
+    <string name="error_authentication_canceled">Connexion annulée</string>
+    <string name="error_no_internet">Aucune connexion internet !</string>
+    <string name="error_unknown_error">Une erreur s\'est produite</string>
+    <string name="connection_succeed">"Vous êtes désormais connecté(e) "</string>
+    <string name="disconnection_succeed">Vous êtes désormais déconnecté(e)</string>
+    <string name="disconnection_failed">Erreur pendant la déconnexion, réessayez svp</string>
+
+    // PROPERTY DETAILS
+    <string name="details_activity_title">Fiche détaillée</string>
+    <string name="property_details_update_button">Bouton pour mettre à jour le bien immobilier</string>
+    <string name="property_details_information_title">Duplex</string>
+    <string name="details_information_subtitle">Manhattan</string>
+    <string name="details_surface_title">Surface :&#160;</string>
+    <string name="details_surface_text">750 m²</string>
+    <string name="details_rooms_title">Nombre de pièces :&#160;</string>
+    <string name="details_rooms_text">10</string>
+    <string name="details_bathrooms_title">Nombre de salles de bain :&#160;</string>
+    <string name="details_bathrooms_text">2</string>
+    <string name="details_bedrooms_title">Nombre de chambres :&#160;</string>
+    <string name="details_bedrooms_text">6</string>
+    <string name="details_price_title">Prix :&#160;</string>
+    <string name="details_price_text">$ 29 872 000</string>
+    <string name="details_location_title">Localisation</string>
+    <string name="details_street_text">12 rue de la Paix</string>
+    <string name="details_location_complement_text">Appt 8 – 9ème étage</string>
+    <string name="details_postal_code_text">75000</string>
+    <string name="details_city_text">PARIS</string>
+    <string name="details_location_state_text">FRANCE</string>
+    <string name="property_details_description_title">Description</string>
+    <string name="property_details_description_text">Description du bien</string>
+    <string name="property_details_other_title">Informations complémentaires</string>
+    <string name="details_realtor_title">Agent en charge :&#160;</string>
+    <string name="details_realtor_text">Franck BLACK</string>
+    <string name="details_date_title">Date de publication : &#160;</string>
+    <string name="details_date_text">02/01/2023</string>
+    <string name="details_sold_date_title">Date de vente :&#160;</string>
+    <string name="details_update_date_title">Dernières modifications :&#160;</string>
+    <string name="property_details_points_of_interest_title">A proximité (rayon de 1 km)</string>
+    <string name="property_details_primary_school_title">Ecole(s) primaire(s) :&#160;</string>
+    <string name="property_details_primary_school_counter">10</string>
+    <string name="property_details_secondary_school_title">Ecole(s) secondaire(s) :&#160;</string>
+    <string name="property_details_place_example">(Place 1, place 2, place 3, place 4, place 5, place 6, place 7)</string>
+    <string name="property_details_park_title">Parc(s) :&#160;</string>
+    <string name="property_details_supermarket_title">Supermarché(s) :&#160;</string>
+    <string name="property_details_restaurant_title">Restaurant(s) :&#160;</string>
+    <string name="property_details_doctor_title">Médecin(s) :&#160;</string>
+    <string name="property_details_pharmacy_title">Pharmacie(s) :&#160;</string>
+    <string name="property_details_bakery_title">Boulangerie(s) :&#160;</string>
+    <string name="more_than_20_results">plus de 20</string>
+    <string name="sold">Vendu…</string>
+    <string name="photo_coming_soon">Image prochainement disponible</string>
+    <string name="no_network">Aucune connexion internet</string>
+
+    // PROPERTY LIST
+    <string name="list_properties_title">Voici la liste de nos biens immobiliers</string>
+    <string name="no_property_found">Aucun bien immobilier trouvé pour le moment</string>
+
+    // LOGIN ACTIVITY
+    <string name="login_title">Voici la page de connexion</string>
+    <string name="login_firstName_title">Prénom *</string>
+    <string name="login_lastName_title">Nom *</string>
+    <string name="login_email_title">Email *</string>
+    <string name="login_password_title">Mot de passe *</string>
+
+    // ADD PROPERTY FRAGMENT
+    <string name="add_type_flat">Appartement</string>
+    <string name="add_type_house">Maison</string>
+    <string name="add_type_duplex">Duplex</string>
+    <string name="add_type_penthouse">Villa</string>
+    <string name="add_property_name">Titre *</string>
+    <string name="choose_property_type">Sélectionnez un type de bien</string>
+    <string name="add_property_area">Secteur *</string>
+    <string name="add_status_1">Disponible</string>
+    <string name="add_status_2">Vendu</string>
+    <string name="add_price_text">Prix *</string>
+    <string name="add_surface_text">Superficie (m²)</string>
+    <string name="add_property_description_text">Anchored by a vast marble gallery with sweeping staircase, th entertaining floor includes a baronial living room facing Park Avenue, handsome library with oringinal paneling, and tremendous dining room; all of which enjoy fireplaces. The state-of-the-art Saint Charles designed kitchen includes a sunny breakfast room and staff quarters. Upstairs, the expansive master suite overlooks Park Avenue and includes two marble baths, two dressing rooms, and two offices. Additionally, the are three large bedrooms with en-suite baths and a media room.</string>
+    <string name="property_picture_content_description">Photo du bien</string>
+    <string name="add_pictures_title">Galerie Photo</string>
+    <string name="property_picture_description">Séjour 1</string>
+    <string name="add_property_creation_date">Date de création</string>
+    <string name="add_property_sold_date">Date de vente</string>
+    <string name="save_button_text">Enregistrer</string>
+    <string name="choose_property_status">Statut actuel du bien :&#160;</string>
+    <string name="add_property_description">Description</string>
+    <string name="add_new_picture">Ajouter une photo</string>
+    <string name="length_error">Ce champ doit contenir au moins 3 caractères</string>
+    <string name="empty_error">Merci de compléter ce champ</string>
+    <string name="empty_pictures_list_error">Veuillez ajouter au moins une photo</string>
+    <string name="numbers_error">Cette valeur semble incorrecte…</string>
+    <string name="add_property">bouton pour ajouter une propriété</string>
+    <string name="add_property_activity_title">Nouvelle propriété</string>
+    <string name="spinner_number_rooms">Nombre de pièces :</string>
+    <string name="spinner_number_bedrooms">Nombre de chambres :</string>
+    <string name="spinner_number_bathrooms">Nombre de salles de bain :</string>
+    <string name="allow_photo_access">Autorisez l\'accès à vos images</string>
+    <string name="picture_enabled">Vous pouvez choisir une photo !</string>
+    <string name="no_image_chosen">Aucune image sélectionnée</string>
+    <string name="add_room_name_title">Ajoutez un titre à cette photo</string>
+    <string name="add_room_name_text">Titre de la photo</string>
+    <string name="cancel_button">RETOUR</string>
+    <string name="validate_button">AJOUTER</string>
+    <string name="add_picture_dialog_title">APERCU DE VOTRE IMAGE</string>
+    <string name="add_property_address_title">Adresse du bien</string>
+    <string name="add_property_street_number">Numéro de rue *</string>
+    <string name="add_property_street_name">Nom de rue / voie *</string>
+    <string name="add_address_complement">Complément d\'adresse</string>
+    <string name="add_postal_code">Code postal *</string>
+    <string name="add_property_city">Ville *</string>
+    <string name="add_property_country">Pays *</string>
+    <string name="sold_date_dialog_title">Veuillez indiquer la date de vente</string>
+
+    // UPDATE PROPERTY FRAGMENT
+    <string name="update_property_activity_title">Modification du bien</string>
+    <string name="update_button_text">Mettre à jour</string>
+
+    // INFO WINDOW MAP
+    <string name="see_details_button">Fiche détaillée</string>
+
+    // MY PROPERTIES ACTIVITY
+    <string name="user_favorites_toolbar_title">Mes favoris</string>
+    <string name="realtor_properties_toolbar_title">Mes biens imobiliers</string>
+    <string name="no_property_found_realtor">Vous n\'avez posté aucun bien pour le moment</string>
+    <string name="no_property_found_user">Aucun bien ne figure dans vos favoris pour le moment</string>
+
+    // SIGNUP ACTIVITY
+    <string name="signup_title_toolbar">Création d\'un compte</string>
+    <string name="signup_realtor_question">Etes-vous agent immobilier ?</string>
+    <string name="get_realtor_access">Accès restreint</string>
+    <string name="add_realtor_password">Saisissez le code de votre agence</string>
+    <string name="add_realtor_password_text">Mot de passe agence*</string>
+    <string name="validate_realtor_button">CONFIRMER</string>
+    <string name="wrong_password">Le code agence est incorrect</string>
+    <string name="zoom_close_content_description">close_picture</string>
+    <string name="sign_up_button">S\'INSCRIRE</string>
+
+    // SETTINGS ACTIVITY
+    <string name="settings_title_toolbar">Compte utilisateur</string>
+    <string name="popup_message_choice_yes">OUI</string>
+    <string name="popup_message_choice_no">NON</string>
+    <string name="popup_message_confirmation_delete_account">Voulez-vous réellement supprimer votre compte ?</string>
+    <string name="delete_account_succeed">Compte supprimé avec succès !</string>
+    <string name="delete_account_failed">Erreur pendant la suppression… Veuillez réessayer</string>
+    <string name="settings_update_button_text">Mettre à jour</string>
+    <string name="delete_button_text">Supprimer le compte</string>
+    <dimen name="settings_progressbar_size">80dip</dimen>
+    <string name="settings_user_firstName_title">Prénom</string>
+    <string name="settings_user_lastName_title">Nom</string>
+    <string name="settings_user_email_title">Email</string>
+    <string name="account_update_success">Compte modifié avec succès !</string>
+    <string name="user_avatar_description">photo d\'un utilisateur</string>
+    <string name="user_avatar_update">mise à jour de la photo d\'un utilisateur</string>
+    <string name="login_title_toolbar">Connexion</string>
+    <string name="please_provide_email">Veuillez saisir votre adresse email</string>
+    <string name="please_provide_password">Veuillez saisir votre mot de passe</string>
+    <string name="fields_empty">Les champs sont vides</string>
+    <string name="please_provide_firstname">Veuillez saisir votre prénom</string>
+    <string name="please_provide_lastname">Veuillez saisir votre nom</string>
+    <string name="signup_link">Pas encore enregistré(e) ? Inscrivez-vous</string>
+    <string name="password">Mot de passe</string>
+    <string name="login_link">Vous avez un compte ? Connectez-vous</string>
+    <string name="sign_in_button_text">SE CONNECTER</string>
+    <string name="signup_button_text">S\'INSCRIRE</string>
+
+    // MEDIA SELECTOR
+    <string name="add_media_selector_dialog_title">Choisissez une source d\'image</string>
+    <string name="gallery_label">Galerie photo</string>
+    <string name="camera_label">Prendre une photo</string>
+    <string name="add_gallery_picture_content_description">Bouton pour ajpouter une image depuis la galerie</string>
+    <string name="add_camera_picture_content_description">Bouton pour prendre une photo</string>
+    <string name="allow_camera_access">Veuillez autoriser l\'accès à la camera de votre appareil</string>
+
+    // FILTERS
+    <string name="filter_min">Min</string>
+    <string name="filter_max">Max</string>
+    <string name="filter_price_title">Prix ($)</string>
+    <string name="filter_rooms_title">Nombre de pièces</string>
+    <string name="filter_bedrooms_title">Nombre de chambres</string>
+    <string name="filter_bathrooms_title">Nombre de salles de bain</string>
+    <string name="filter_main_text">FILTRES PERSONNALISÉS</string>
+    <string name="filter_creation_date_title">Date de publication</string>
+    <string name="filter_button_text">Valider les filtres</string>
+    <string name="filter_update_date_title">Date de dernière modification</string>
+    <string name="filter_sold_date_title">Date de vente</string>
+    <string name="filter_status_title">Statut actuel</string>
+    <string name="filter_property_type">Type de bien</string>
+    <string name="list_filter_properties_button_text">Filtres</string>
+    <string name="list_clear_filters_properties_button_text">Supprimer les filtres</string>
+    <string name="creation_date_dialog_title">Veuillez choisir une date de publication</string>
+    <string name="update_date_dialog_title">Selectionnez la date de modification</string>
+    <string name="add_type_flat_trad">Flat</string>
+    <string name="add_type_house_trad">House</string>
+    <string name="add_type_duplex_trad">Duplex</string>
+    <string name="add_type_penthouse_trad">Penthouse</string>
+    <string name="room_name_length_error">Please fix room name length</string>
+    <string name="required_field">* Champ requis</string>
+
+    <string name="notification_title">REAL ESTATE MANAGER</string>
+    <string name="notification_message">Annonce créée avec succès :&#160;</string>
+
+</resources>

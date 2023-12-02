@@ -1,0 +1,141 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'com.google.gms.google-services'
+}
+
+apply plugin: 'kotlin-kapt'
+
+
+android {
+
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.benlinux.realestatemanager"
+        minSdkVersion 19
+        multiDexEnabled true
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+
+        // Added to get secret MAPS API key
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        buildConfigField "String", "MAPS_API_KEY", "\"${properties.getProperty('MAPS_API_KEY')}\""
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace 'com.benlinux.realestatemanager'
+}
+
+dependencies {
+
+    androidTestImplementation "androidx.test.uiautomator:uiautomator:2.2.0"
+
+    testImplementation "org.robolectric:robolectric:4.2.1"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation 'androidx.test:core-ktx:1.5.0'
+    implementation 'androidx.test.espresso:espresso-contrib:3.5.1', {
+        exclude module: "protobuf-lite"
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude module: 'recyclerview-v7'
+    }
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation "org.mockito.kotlin:mockito-kotlin:4.1.0"
+
+    // Test helpers for Room
+    testImplementation "android.arch.persistence.room:testing:1.1.1"
+    androidTestUtil 'com.android.support.test:orchestrator:1.0.2'
+
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    // Material Design
+    implementation 'com.google.android.material:material:1.8.0'
+
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    // FIREBASE UI
+    implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
+    implementation "com.google.android.gms:play-services-auth:20.4.1"
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+    // FIREBASE STORAGE
+    implementation 'com.google.firebase:firebase-database-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
+    // GLIDE
+    kapt 'com.github.bumptech.glide:compiler:4.13.0'
+    implementation ("com.github.bumptech.glide:glide:4.11.0") {
+        exclude group: "com.android.support"
+    }
+
+    // GOOGLE MAP SDK
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.maps.android:android-maps-utils:2.4.0'
+
+    // Easy Permissions Library
+    implementation 'pub.devrel:easypermissions:3.0.0'
+
+    // MultiDex
+    implementation 'com.android.support:multidex:1.0.3'
+
+    // ROOM
+    //The Room persistence library provides an abstraction layer over SQLite
+    def roomVersion = "2.5.0"
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:$roomVersion"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
+
+    // Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$roomVersion"
+
+    // Lifecycle scope
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+
+    // VIEW MODEL & LIVE DATA
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    // RX utils to subscribe on Background (used to prepopulate room database)
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    // Gson for type converters
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+    // OK HTTP for easy Place API request
+    implementation("com.squareup.okhttp3:okhttp:4.8.1")
+
+    // SMARTEIST Image Slider
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
+
+    // Display metrics
+    implementation "androidx.window:window:1.1.0-alpha04"
+
+    // Expandable textview
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+}

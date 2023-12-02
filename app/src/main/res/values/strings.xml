@@ -1,0 +1,244 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Real Estate Manager</string>
+
+    // NAVIGATION
+    <string name="navigation_list_view">List View</string>
+    <string name="navigation_map_view">Map View</string>
+    <string name="navigation_add_property">Add Property</string>
+
+    <string name="bottom_navigation_list_view">List View</string>
+    <string name="bottom_navigation_map_view">Map View</string>
+    <string name="bottom_navigation_add_property">Add Property</string>
+
+    // FRAGMENTS LABELS
+    <string name="list_fragment_label">Properties List</string>
+    <string name="map_fragment_label">Properties Map</string>
+    <string name="add_property_fragment_label">New property</string>
+
+    // MAIN ACTIVITY
+    <string name="main_activity_message">The first property costs&#160;</string>
+    <string name="house_value_text">Here is the cost of a property :&#160;</string>
+    <string name="zero_value">0</string>
+
+    // NAVIGATION DRAWER
+    <string name="user_name" translatable="false">John SMITH</string>
+    <string name="user_email" translatable="false">jsmith.1337@gmail.com</string>
+    <string name="drawer_title_login">LOG IN</string>
+    <string name="drawer_title_my_properties">MY PROPERTIES</string>
+    <string name="drawer_title_my_favorites">MY FAVORITES</string>
+    <string name="drawer_title_settings">SETTINGS</string>
+    <string name="drawer_title_logout">LOGOUT</string>
+    <string name="info_no_email_found">Email not found</string>
+    <string name="info_no_username_found">Username not found</string>
+    <string name="logo" translatable="false">Real Estate Manager logo</string>
+    <string name="please_login">Please login</string>
+
+    // Used in NavigationDrawer
+    <string name="navigation_drawer_open" translatable="false">Start</string>
+    <string name="navigation_drawer_close" translatable="false">Close</string>
+
+    // AUTHENTICATION
+    <string name="login" translatable="false">Connexion</string>
+    <string name="error_not_connected">User must be logged !</string>
+    <string name="error_authentication_canceled">Authentication canceled&#8230;</string>
+    <string name="error_no_internet">No internet connexion !</string>
+    <string name="error_unknown_error">An unknown error occurred&#8230;</string>
+    <string name="connection_succeed">Authentication completed !</string>
+    <string name="disconnection_succeed">Logout completed !</string>
+    <string name="disconnection_failed">Error during logout… Try again</string>
+
+    // PROPERTY DETAILS
+    <string name="details_activity_title">Property details</string>
+    <string name="property_details_update_button">Update property button</string>
+    <string name="property_details_information_title">Duplex</string>
+    <string name="details_information_subtitle">Manhattan</string>
+    <string name="details_surface_title">Surface :&#160;</string>
+    <string name="details_surface_text">750 m²</string>
+    <string name="details_rooms_title">Number of rooms :&#160;</string>
+    <string name="details_rooms_text">10</string>
+    <string name="details_bathrooms_title">Number of bathrooms :&#160;</string>
+    <string name="details_bathrooms_text">2</string>
+    <string name="details_bedrooms_title">Number of bedrooms :&#160;</string>
+    <string name="details_bedrooms_text">6</string>
+    <string name="details_location_title">Location</string>
+    <string name="details_street_text">12 rue de la Paix</string>
+    <string name="details_location_complement_text">Appartement 8 – 9ème étage</string>
+    <string name="details_postal_code_text">75000</string>
+    <string name="details_city_text">PARIS</string>
+    <string name="details_location_state_text">FRANCE</string>
+    <string name="property_details_description_title">Description</string>
+    <string name="property_details_description_text">Property description</string>
+    <string name="details_price_title">Price :&#160;</string>
+    <string name="details_price_text">$ 29 872 000</string>
+    <string name="property_details_other_title">Further information</string>
+    <string name="details_realtor_title">Property\'s realtor :&#160;</string>
+    <string name="details_realtor_text">Franck BLACK</string>
+    <string name="details_date_title">Date of publication :&#160;</string>
+    <string name="details_date_text">02/01/2023</string>
+    <string name="details_sold_date_title">Date of sold :&#160;</string>
+    <string name="details_update_date_title">Last update :&#160;</string>
+    <string name="property_details_points_of_interest_title">Local services (in a 1 km radius)</string>
+    <string name="property_details_primary_school_title">Primary school(s) :&#160;</string>
+    <string name="property_details_primary_school_counter">10</string>
+    <string name="property_details_secondary_school_title">Secondary school(s) :&#160;</string>
+    <string name="property_details_place_example">(Place 1, place 2, place 3, place 4, place 5, place 6, place 7)</string>
+    <string name="property_details_park_title">Parks :&#160;</string>
+    <string name="property_details_supermarket_title">Supermarkets :&#160;</string>
+    <string name="property_details_restaurant_title">Restaurants :&#160;</string>
+    <string name="property_details_doctor_title">Doctors :&#160;</string>
+    <string name="property_details_pharmacy_title">Pharmacies :&#160;</string>
+    <string name="property_details_bakery_title">Bakeries :&#160;</string>
+    <string name="more_than_20_results">more than 20</string>
+    <string name="sold">Already sold…</string>
+    <string name="photo_coming_soon">Photo coming soon</string>
+    <string name="no_network">Network is not available</string>
+
+    // PROPERTY LIST
+    <string name="list_properties_title">Here is the list of our properties</string>
+    <string name="no_property_found">No property found at this time</string>
+
+    // LOGIN ACTIVITY
+    <string name="login_title">Here is the login activity</string>
+    <string name="login_title_toolbar">Connexion</string>
+    <string name="login_firstName_title">First name *</string>
+    <string name="login_lastName_title">Last name *</string>
+    <string name="login_email_title">Email *</string>
+    <string name="login_password_title">Password *</string>
+
+    // ADD PROPERTY ACTIVITY
+    <string name="add_type_flat">Flat</string>
+    <string name="add_type_house">House</string>
+    <string name="add_type_duplex">Duplex</string>
+    <string name="add_type_penthouse">Penthouse</string>
+    <string name="add_property_name">Title *</string>
+    <string name="choose_property_type">Please select a property type</string>
+    <string name="add_property_area">Area *</string>
+    <string name="add_status_1">Available</string>
+    <string name="add_status_2">Sold</string>
+    <string name="add_price_text">Price *</string>
+    <string name="add_surface_text">Surface (m²)</string>
+    <string name="add_property_description_text">Anchored by a vast marble gallery with sweeping staircase, th entertaining floor includes a baronial living room facing Park Avenue, handsome library with oringinal paneling, and tremendous dining room; all of which enjoy fireplaces. The state-of-the-art Saint Charles designed kitchen includes a sunny breakfast room and staff quarters. Upstairs, the expansive master suite overlooks Park Avenue and includes two marble baths, two dressing rooms, and two offices. Additionally, the are three large bedrooms with en-suite baths and a media room.</string>
+    <string name="property_picture_content_description">Picture of the property</string>
+    <string name="add_pictures_title">Pictures gallery</string>
+    <string name="property_picture_description">Lounge 1</string>
+    <string name="add_property_creation_date">Creation date</string>
+    <string name="add_property_sold_date">Date of sale</string>
+    <string name="save_button_text">Save property</string>
+    <string name="choose_property_status">Please select a property status</string>
+    <string name="add_property_description">Description</string>
+    <string name="add_new_picture">Add a new picture</string>
+    <string name="length_error">This field must contain at least 3 characters</string>
+    <string name="empty_error">Please complete this field</string>
+    <string name="empty_pictures_list_error">Please add at least 1 picture</string>
+    <string name="numbers_error">This value doesn\'t seem to be correct…</string>
+    <string name="add_property">add property button</string>
+    <string name="add_property_activity_title">Add a new property</string>
+    <string name="spinner_number_rooms">Number of rooms :</string>
+    <string name="spinner_number_bedrooms">Number of bedrooms :</string>
+    <string name="spinner_number_bathrooms">Number of bathrooms :</string>
+    <string name="allow_photo_access">Please allow pictures access</string>
+    <string name="picture_enabled">You can choose a picture !</string>
+    <string name="no_image_chosen">No image chosen</string>
+    <string name="add_room_name_title">Please add room name</string>
+    <string name="add_room_name_text">Room name</string>
+    <string name="cancel_button" tools:ignore="ButtonCase">CANCEL</string>
+    <string name="validate_button">ADD PICTURE</string>
+    <string name="add_picture_dialog_title">PICTURE PREVIEW</string>
+    <string name="add_property_address_title">Property address</string>
+    <string name="add_property_street_number">Street number *</string>
+    <string name="add_property_street_name">Street name *</string>
+    <string name="add_address_complement">Address complement</string>
+    <string name="add_postal_code">Postal code *</string>
+    <string name="add_property_city">City *</string>
+    <string name="add_property_country">Country *</string>
+    <string name="sold_date_dialog_title">Please select the date of sold</string>
+
+    // UPDATE PROPERTY ACTIVITY
+    <string name="update_property_activity_title">Property update</string>
+    <string name="update_button_text">Update property</string>
+
+    // INFO WINDOW MAP
+    <string name="see_details_button">See details</string>
+
+    // MY PROPERTIES ACTIVITY
+    <string name="user_favorites_toolbar_title">My favorites</string>
+    <string name="realtor_properties_toolbar_title">My properties</string>
+    <string name="no_property_found_realtor">You didn\'t post any property at this time</string>
+    <string name="no_property_found_user">You didn\'t add any property to your favorites at this time</string>
+
+    // SIGNUP ACTIVITY
+    <string name="signup_title_toolbar">Account creation</string>
+    <string name="signup_realtor_question">Are you a realtor ?</string>
+    <string name="get_realtor_access">Realtor private access</string>
+    <string name="add_realtor_password">Please enter agency password</string>
+    <string name="add_realtor_password_text">Agency password*</string>
+    <string name="validate_realtor_button">CONFIRM</string>
+    <string name="wrong_password">Agency password is not correct</string>
+    <string name="zoom_close_content_description">close_picture</string>
+    <string name="sign_up_button">SIGN UP</string>
+
+    // SETTINGS ACTIVITY
+    <string name="settings_title_toolbar">Settings</string>
+    <string name="popup_message_choice_yes">YES</string>
+    <string name="popup_message_choice_no">NO</string>
+    <string name="popup_message_confirmation_delete_account">Do you really want to delete your account ?</string>
+    <string name="delete_account_succeed">Account deleted with success !</string>
+    <string name="delete_account_failed">Error during deletion… Try again</string>
+    <string name="settings_update_button_text">Save changes</string>
+    <string name="delete_button_text">Delete account</string>
+    <dimen name="settings_progressbar_size">80dip</dimen>
+    <string name="settings_user_firstName_title">First name</string>
+    <string name="settings_user_lastName_title">Last name</string>
+    <string name="settings_user_name" translatable="false">John Doe</string>
+    <string name="settings_user_email_title">Email</string>
+    <string name="settings_user_email" translatable="false">johndoe@test.com</string>
+    <string name="account_update_success">Account update successful !</string>
+    <string name="user_avatar_description">user picture</string>
+    <string name="user_avatar_update">update user picture</string>
+    <string name="please_provide_email">Please provide email</string>
+    <string name="please_provide_password">Please provide password</string>
+    <string name="fields_empty">Fields are empty</string>
+    <string name="please_provide_firstname">Please provide first name</string>
+    <string name="please_provide_lastname">Please provide last name</string>
+    <string name="signup_link">Not registered yet ? Sign up here</string>
+    <string name="password">Password</string>
+    <string name="login_link">Existing User ? Sign In</string>
+    <string name="sign_in_button_text">SIGN IN</string>
+    <string name="signup_button_text">SIGN UP</string>
+    <string name="add_media_selector_dialog_title">Please select a media source</string>
+    <string name="gallery_label">From gallery</string>
+    <string name="camera_label">Take a photo</string>
+    <string name="add_gallery_picture_content_description">Button to add picture from gallery</string>
+    <string name="add_camera_picture_content_description">Button to take a photo from camera</string>
+    <string name="allow_camera_access">Please allow camera access</string>
+
+    // FILTER DIALOG
+    <string name="filter_min">Min</string>
+    <string name="filter_max">Max</string>
+    <string name="filter_price_title">Price ($)</string>
+    <string name="filter_rooms_title">Number of rooms</string>
+    <string name="filter_bedrooms_title">Number of bedrooms</string>
+    <string name="filter_bathrooms_title">Number of bathrooms</string>
+    <string name="filter_main_text">CUSTOM FILTERS</string>
+    <string name="filter_creation_date_title">Date of publication</string>
+    <string name="filter_button_text">Validate filters</string>
+    <string name="filter_update_date_title">Date of last update</string>
+    <string name="filter_sold_date_title">Date of sold</string>
+    <string name="filter_status_title">Availability status</string>
+    <string name="filter_property_type">Property type</string>
+    <string name="list_filter_properties_button_text">Add filters</string>
+    <string name="list_clear_filters_properties_button_text">Clear filters</string>
+    <string name="creation_date_dialog_title">Please select a date of publication</string>
+    <string name="update_date_dialog_title">Select date of last update</string>
+    <string name="add_type_flat_trad">Appartement</string>
+    <string name="add_type_house_trad">Maison</string>
+    <string name="add_type_duplex_trad">Duplex</string>
+    <string name="add_type_penthouse_trad">Villa</string>
+    <string name="room_name_length_error">Please fix room name length</string>
+    <string name="required_field">* Required field</string>
+
+    <string name="notification_title">REAL ESTATE MANAGER</string>
+    <string name="notification_message">Property created successfully :&#160;</string>
+
+
+</resources>

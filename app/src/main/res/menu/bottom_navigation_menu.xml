@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/list_fragment"
+        android:icon="@drawable/ic_navigation_list_view_24"
+        android:title="@string/navigation_list_view" />
+
+
+    <item
+        android:id="@+id/map_fragment"
+        android:icon="@drawable/ic_navigation_map_view_24"
+        android:title="@string/navigation_map_view" />
+
+
+</menu>

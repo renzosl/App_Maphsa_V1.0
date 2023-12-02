@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@+id/list_fragment">
+
+    <fragment
+        android:id="@+id/list_fragment"
+        android:name="com.benlinux.realestatemanager.ui.fragments.ListFragment"
+        android:label="@string/list_fragment_label"
+        tools:layout="@layout/fragment_list_view" />
+
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="com.benlinux.realestatemanager.ui.fragments.MapFragment"
+        android:label="@string/map_fragment_label"
+        tools:layout="@layout/fragment_map_view" />
+
+
+</navigation>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Drawer Layout first that include drawer navigation -->
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:context="com.benlinux.realestatemanager.ui.activities.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.benlinux.realestatemanager.ui.activities.MainActivity"
+        android:gravity="center">
+
+        <!-- Toolbar -->
+        <include
+            android:id="@+id/main_toolbar"
+            layout="@layout/toolbar_main" />
+
+
+        <!-- Main Fragment (List / Map / Add Property) -->
+        <androidx.fragment.app.FragmentContainerView
+
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero"
+            app:defaultNavHost="true"
+            app:layout_constraintTop_toBottomOf="@id/main_toolbar"
+            app:layout_constraintBottom_toTopOf="@id/bottom_nav_view"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:navGraph="@navigation/bottom_navigation" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_property_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            app:layout_constraintBottom_toTopOf="@id/bottom_nav_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="@dimen/default_margin"
+            app:srcCompat="@drawable/ic_add_property_24"
+            app:backgroundTint="@color/colorAccent"
+            app:tint="@color/colorWhite"
+            android:contentDescription="@string/add_property"
+            android:visibility="gone"/>
+
+        <!-- Bottom Navigation Bar -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/zero_margin"
+            android:layout_marginEnd="@dimen/zero_margin"
+            android:background="?android:attr/windowBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/bottom_navigation_menu"
+            app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+            app:itemTextAppearanceInactive="@style/BottomNavigationView"
+            app:itemIconSize="@dimen/bottom_navigation_icon_size" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Drawer NavigationView that includes header and menu -->
+    <com.google.android.material.navigation.NavigationView
+    android:id="@+id/activity_main_nav_view"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:fitsSystemWindows="true"
+    app:headerLayout="@layout/activity_main_nav_header"
+    app:layout_constraintTop_toBottomOf="@id/main_toolbar"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:menu="@menu/drawer_navigation_menu"
+    app:itemIconPadding="@dimen/default_padding"
+    android:background="@color/colorWhite"
+    app:itemTextColor="@color/colorPrimary"
+    app:itemIconTint="@color/colorPrimary">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <!-- Drawer Logo -->
+        <ImageView
+            android:id="@+id/activity_main_nav_view_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/drawer_logo"
+            android:layout_marginBottom="@dimen/default_large_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/logo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
